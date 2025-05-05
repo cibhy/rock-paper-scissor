@@ -32,6 +32,7 @@ function getHumanChoice(){
 let playerScore = 0;
 let computerScore = 0;
 
+
 // Compares the human's and computer's choices, updates scores, and returns the round result.
 
 function playRound() {
@@ -63,6 +64,22 @@ function playRound() {
   }
 }
 
-console.log(playRound());
-console.log("Player : ", playerScore);
-console.log("Computer : ", computerScore);
+// Plays 5 rounds of Rock-Paper-Scissors, updates scores, and displays the final winner.
+
+function playGame(){
+
+  for (let i = 1; i <= 5; i++) {
+    console.log(playRound());
+    console.log("Player : ", playerScore);
+    console.log("Computer : ", computerScore);
+  }
+  if (playerScore > computerScore){
+    console.log("Player Wins after 5 Rounds")
+  } else if (playerScore < computerScore) {
+    console.log("Computer Wins after 5 Rounds")
+  } else {
+    console.log("Its a tie after 5 Rounds")
+  }
+}
+
+playGame();
